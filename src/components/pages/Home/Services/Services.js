@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useServices from "../../../../../hooks/useServices";
+import useServices from "../../../../hooks/useServices";
 import "./Services.css";
 
 const Services = () => {

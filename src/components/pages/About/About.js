@@ -1,6 +1,5 @@
 import React from "react";
 import "./About.css";
-import img from "../../../images/medicine.jpg";
 
 function About() {
   const profileData = [

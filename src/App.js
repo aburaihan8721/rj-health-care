@@ -9,7 +9,6 @@ import Blogs from "./components/pages/Blogs/Blogs";
 import PrivateRoute from "./private/PrivateRoute";
 import AuthProvider from "./context/AuthProvider";
 import Review from "./components/pages/Review/Review";
-import Gallery from "./components/pages/Gallery/Gallery";
 import NotFound from "./components/pages/NotFound/NotFound";
 import Footer from "./components/shared/Footer/Footer";
 import ServiceDetails from "./components/pages/ServiceDetails/ServiceDetails";
@@ -40,10 +39,6 @@ function App() {
             <PrivateRoute exact path="/review">
               <Review></Review>
             </PrivateRoute>
-
-            <Route exact path="/gallery">
-              <Gallery></Gallery>
-            </Route>
 
             <Route exact path="/login">
               <Login></Login>

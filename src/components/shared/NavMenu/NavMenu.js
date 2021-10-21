@@ -57,12 +57,6 @@ function NavMenu() {
                 </Link>
               </li>
 
-              <li className="nav-item">
-                <Link className="nav-link " to="/gallery">
-                  Gallery
-                </Link>
-              </li>
-
               {!user?.email && (
                 <li className="nav-item">
                   <Link className="nav-link" to="/login">

@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 initializeFirebase();
 const useFirebase = () => {
   const [user, setUser] = useState({});
-  const [error, setError] = useState("");
 
   const auth = getAuth();
   const googleProvider = new GoogleAuthProvider();
@@ -21,7 +20,7 @@ const useFirebase = () => {
         setUser(user);
       }
     });
-  }, []);
+  },);
 
   const handleLogout = () => {
     signOut(auth).then(() => {
@@ -29,7 +28,7 @@ const useFirebase = () => {
     });
   };
 
-  return { signInUsingGoogle, user, error, handleLogout };
+  return { signInUsingGoogle, user, handleLogout };
 };
 
 export default useFirebase;
