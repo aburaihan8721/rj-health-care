@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 function Register() {
-  const { signInUsingGoogle } = useAuth();
+  const { signInUsingGoogle, handleForm, handleEmail, handlePassword, error } = useAuth();
 
   return (
     <div>
@@ -14,20 +14,30 @@ function Register() {
         <div className="row w-50 mx-auto">
           <div className="col-md-12">
             <div className="p-3 custom-border mt-3">
-              <form>
+              <form onSubmit={handleForm}>
                 <h3 className="text-dark text-center custom-m">Create an account</h3>
 
                 <div className="mb-3">
-                  <input type="text" className="form-control" placeholder="Full Name" />
+                  <input
+                    onBlur={handleEmail}
+                    type="email"
+                    className="form-control"
+                    placeholder="Username or Email"
+                    required
+                  />
                 </div>
 
                 <div className="mb-3">
-                  <input type="email" className="form-control" placeholder="Username or Email" />
-                </div>
-                <div className="mb-3">
-                  <input type="password" className="form-control" placeholder="Password" />
+                  <input
+                    onBlur={handlePassword}
+                    type="password"
+                    className="form-control"
+                    placeholder="Password"
+                    required
+                  />
                 </div>
 
+                <div className="text-danger my-2 ">{error}</div>
                 <button type="submit" className="btn btn-primary form-control">
                   Create an account
                 </button>

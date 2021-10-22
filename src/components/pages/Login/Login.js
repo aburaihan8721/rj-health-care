@@ -6,7 +6,7 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { Link, useLocation, useHistory } from "react-router-dom";
 
 function Login() {
-  const { signInUsingGoogle } = useAuth();
+  const { signInUsingGoogle, handleForm, handleEmail, handlePassword } = useAuth();
   const location = useLocation();
   const history = useHistory();
 
@@ -18,21 +18,26 @@ function Login() {
     });
   };
 
-  // console.log(user);
   return (
     <div>
       <div className="container">
         <div className="row w-50 mx-auto">
           <div className="col-md-12">
             <div className="p-3 custom-border mt-3">
-              <form>
+              <form onSubmit={handleForm}>
                 <h3 className="text-dark text-center custom-m">Login</h3>
 
                 <div className="mb-3">
-                  <input type="email" className="form-control" placeholder="Username or Email" />
+                  <input
+                    onBlur={handleEmail}
+                    type="email"
+                    className="form-control"
+                    placeholder="Username or Email"
+                    required
+                  />
                 </div>
                 <div className="mb-3">
-                  <input type="password" className="form-control" placeholder="Password" />
+                  <input onBlur={handlePassword} type="password" className="form-control" placeholder="Password" required/>
                 </div>
 
                 <button type="submit" className="btn btn-primary form-control">
